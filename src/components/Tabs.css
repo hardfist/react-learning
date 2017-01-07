@@ -1,0 +1,21 @@
+.tabs-list{
+    display: flex;
+    padding: 0px;
+}
+.tabs-list-item{
+    display: flex-item;
+    flex: 1;
+    text-decoration: none;
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+}
+.tabs-list-item.active{
+    border-bottom: 1px solid red;
+}
+.tabs-pane-content{
+    display: none;
+}
+.tabs-pane-content.active{
+    display: block;
+}
