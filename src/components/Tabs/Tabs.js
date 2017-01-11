@@ -1,5 +1,4 @@
 import React,{Component} from 'react'
-import classnames from 'classnames'
 import TabNav from './TabNav'
 import TabContent from './TabContent'
 import './Tabs.css'
@@ -11,13 +10,13 @@ export default class extends Component{
             activeIndex,
             prevIndex: activeIndex
         }
-        this.handleTabClick = this.handleTabClick.bind(this)
+        this.handleTabClick=this.handleTabClick.bind(this)
     }
     static defaultProps={
         onChange:(e)=>{console.log(e)}
     }
     handleTabClick(activeIndex){
-        const prevIndex = this.state.activeIndex 
+        const prevIndex=this.state.activeIndex 
         this.setState({
             activeIndex,
             prevIndex
@@ -28,7 +27,7 @@ export default class extends Component{
         })
     }
     renderContent(){
-        const {children} = this.props
+        const {children}=this.props
         return (
             <TabContent
                 key="tabcontent"
@@ -42,9 +41,9 @@ export default class extends Component{
         return (
             <TabNav
                 key="tabBar"
-                onTabClick ={this.handleTabClick}
+                onTabClick={this.handleTabClick}
                 panels={children}
-                activeIndex = {this.state.activeIndex}
+                activeIndex={this.state.activeIndex}
             />
         )
     }

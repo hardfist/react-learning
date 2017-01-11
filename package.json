@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-preset-stage-0": "^6.16.0",
     "react-scripts": "0.8.4"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-lite": "^0.15.30",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4"
   },
   "scripts": {
     "start": "react-scripts start",
