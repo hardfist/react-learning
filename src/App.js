@@ -1,16 +1,30 @@
-import React, { Component } from 'react';
-import Text from './components/Text'
-import Check from './components/Check'
-import Select from './components/Select'
-import MultiCheck from './components/MultiCheck'
-import MultiSelect from './components/MultiSelect'
-class App extends Component {
-  render() {
+import React,{Component} from 'react'
+import {connect} from 'react-redux'
+import {addTodo,completeTodo} from './reducers/actions'
+import AddTodo from './components/AddTodo'
+import TodoList from './components/TodoList'
+
+class App extends Component{
+  render(){
+    const {dispatch,todos} = this.props
     return (
       <div>
-        <MultiSelect />
+        <AddTodo
+          onAddClick = {
+            text => dispatch(addTodo(text))
+          }/>
+        <TodoList 
+          todos = {todos}
+          onTodoClick = {index =>
+            dispatch(completeTodo(index))}/>
       </div>
     )
   }
 }
-export default App;
+
+function select(state){
+  return {
+    todos : state.todos
+  }
+}
+export default connect(select)(App)

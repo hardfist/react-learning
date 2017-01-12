@@ -8,12 +8,15 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "events": "^1.1.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-lite": "^0.15.30",
+    "react-motion": "^0.4.7",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-logger": "^2.7.4"
+    "redux-logger": "^2.7.4",
+    "thunk": "0.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
