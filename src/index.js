@@ -1,15 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import promise from 'redux-promise'
+import createLogger from 'redux-logger'
 import { Provider } from 'react-redux'
-import App from './components/TodoApp'
-import todoApp from './reducers/TodoApp'
-
-let store = createStore(todoApp)
-let rootElement = document.getElementById('root')
+import './index.css'
+import reducers from './components/Posts/reducers'
+import PostApp from './components/Posts'
+const store = createStore(
+    reducers,
+    applyMiddleware(thunk,promise,createLogger())
+)
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <PostApp userId="1" />
     </Provider>,
     document.getElementById('root')
 )
