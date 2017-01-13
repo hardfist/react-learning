@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadPostsFailure, loadPostsRequest, loadPostsSuccess, selectPost } from './actionCreator'
+import { selectPost,loadPosts } from './actionCreator'
 class Post extends Component {
     render() {
         const {post} = this.props
@@ -30,26 +30,14 @@ class Posts extends Component {
         super(props)
         this.handleSelect = this.handleSelect.bind(this)
     }
-    loadData(userId) {
-        const {dispatch, posts} = this.props
-        if (posts[userId]) {
-            return
-        }
-        dispatch(loadPostsRequest(userId))
-
-        fetch(`/api/post${userId}.json`)
-            .then(data => data.json())
-            .then(
-            response => dispatch(loadPostsSuccess(userId, response)),
-            error => dispatch(loadPostsFailure(userId, error)))
-    }
     componentDidMount() {
-        this.loadData(this.props.userId)
+        const {dispatch,userId} = this.props 
+        dispatch(loadPosts(userId))
     }
     componentWillReceiveProps(nextProps) {
-        console.log('props:', nextProps)
+        const {dispatch} = this.props 
         if (nextProps.userId !== this.props.userId) {
-            this.loadData(nextProps.userId)
+            dispatch(loadPosts(nextProps.userId))
         }
     }
     handleSelect(userId) {
@@ -59,7 +47,7 @@ class Posts extends Component {
     render() {
         const {isLoading, userId, posts} = this.props
         const select = <Select userId={userId} handleSelect={this.handleSelect} />
-        if (this.props.isLoading) {
+        if (isLoading) {
             return (
                 <div>
                     {select}
