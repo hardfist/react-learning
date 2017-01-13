@@ -19,6 +19,7 @@
     "redux-logger": "^2.7.4",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
+    "redux-undo": "^0.6.1",
     "thunk": "0.0.1"
   },
   "scripts": {
