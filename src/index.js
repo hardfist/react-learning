@@ -1,1 +1,1 @@
-import './components/Redo'
+import './components/ThunkMiddleware'
