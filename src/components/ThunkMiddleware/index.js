@@ -69,6 +69,9 @@ class App extends Component {
     }
     onClick() {
         store.dispatch(request())
+        .then(() => {
+            console.log('Done')
+        })
     }
     render() {
         return (

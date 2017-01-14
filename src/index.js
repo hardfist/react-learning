@@ -1,1 +1,1 @@
-import './components/ThunkMiddleware'
+import './components/ReduxSaga'
