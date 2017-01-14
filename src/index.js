@@ -1,1 +1,1 @@
-import './components/ReduxSaga'
+import './components/ReduxPromise'
