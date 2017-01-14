@@ -1,1 +1,1 @@
-import './components/ReduxPromise'
+import './components/Router'
