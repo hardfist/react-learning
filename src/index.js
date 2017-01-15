@@ -1,1 +1,1 @@
-import './components/ReactRouterRedux'
+import './components/ReduxBlog'
