@@ -1,1 +1,1 @@
-import './components/Router'
+import './components/ReactRouterRedux'
